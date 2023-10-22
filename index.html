@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+      <title>PixIcam.com</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <header>
+    <h1 class="title">- PixIcam Wars -</h1>
+    <h1 class="title underTitle">Place your Pixel</h1>
+  </header>
+  <body>
+    <div id="cursor"></div>
+    <canvas id="game"></canvas>
+    <div id="colorChoice">
+      <input type="color" id="colorSelector" class="Selector">
+    </div>
+    
+  </body>
+  <footer>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+     <script src="script.js"></script>
+     
+     <div class="feedback-section">
+      <h3 class="title underTitle">Feedback</h3>
+      <form>
+        <textarea class="feedback"placeholder="  Enter your feedback"></textarea>
+        
+      </form>
+      <button type="submit">Submit</button>
+    </div>
+   
+  </footer>
+</html>
