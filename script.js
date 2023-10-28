@@ -19,15 +19,14 @@ const firebaseConfig = {
   messagingSenderId: "343637153226",
   appId: "1:343637153226:web:d316bd6ca67bd6ffb2ab33"
 };
-// Initialize Firebase
+// Initialize Firebase and dataBase
 firebase.initializeApp(firebaseConfig)
-
 const db = firebase.firestore()
 
 const colorList = [
   'red', 'orange', 'yellow', '#cb6e00', '#0cd78d', 'cyan', '#052be6', '#690be4', '#ce0ee0', '#c75884'
 ];
-
+//creation of the color tool 
 colorList.forEach(color => {
   const colorItem = document.createElement('div');
   colorItem.style.backgroundColor = color;
@@ -40,8 +39,7 @@ colorList.forEach(color => {
     colorChoice.querySelectorAll('div').forEach(item => {
         item.innerHTML = ""; // Clear the innerHTML of each color item
       });
-    colorItem.innerHTML = '<i class="fa-solid fa-pen"></i>'
-
+    colorItem.innerHTML = '<i class="fa-solid fa-pen"></i>' // actve the innerHTML for the selected color
   });
 });
 
@@ -76,9 +74,7 @@ function drawGrids(ctx,canvasWidth, canvasHeight, pixelSize, pixelSize){
 const firstDrawPixel = () => {
   canvasEl.width = canvasWidth;
   canvasEl.height = canvasHeight;
-  ctx.fillStyle = "blue";
   ctx.fillRect(0, 0, canvasWidth, canvasHeight);
-
   drawPixel(canvasWidth, canvasHeight, pixelSize);
 };
 
@@ -106,12 +102,10 @@ const drawPixel = (canvasWidth, canvasHeight, pixelSize) => {
 
 const onClickPixel = (canvasEl, pixelSize) => {
   canvasEl.addEventListener("click", (event) => {
-    const x = Math.round(event.offsetX );
-    const y = Math.round(event.offsetY);
-    const colIndex = Math.floor(x / pixelSize);
-    const rowIndex = Math.floor(y / pixelSize);
+    const colIndex = Math.floor(event.offsetX / pixelSize);
+    const rowIndex = Math.floor(event.offsetY / pixelSize);
+    
     if (pixelData[rowIndex][colIndex] !== null) {
-      ctx.fillStyle = pixelData[rowIndex][colIndex];
       ctx.fillStyle = currentColorChoice;
       ctx.fillRect(colIndex * pixelSize,rowIndex * pixelSize,pixelSize,pixelSize);}
 
@@ -119,24 +113,21 @@ const onClickPixel = (canvasEl, pixelSize) => {
     
     let pixelRef = db.collection('pixel').doc(`pixel :${pixel.colIndex}-${pixel.rowIndex}`)
     pixelRef.set(pixel, {merge: true})
-  
   });
 };
 
-
+            // -----   Board Generation ----- // 
 
 for (let rowIndex = 0; rowIndex < canvasHeight / pixelSize; rowIndex++) {
   pixelData[rowIndex] = new Array(canvasWidth / pixelSize).fill(null);
 }
-
-// Populate the pixel data with random colors (example)
+// Populate the pixel data with colors (example)
 for (let rowIndex = 0; rowIndex < canvasHeight / pixelSize; rowIndex++) {
   for (let colIndex = 0; colIndex < canvasWidth / pixelSize; colIndex++) {
-    // Generate a random color (you can use any color representation)
-    const Color = 'white'
-    
-    // Assign the random color to the pixel
-    pixelData[rowIndex][colIndex] = Color;
+    // Generate the color background for the canva (you can use any color representation)
+    const ColorCanva = 'white'
+    // Assign the color to all the pixel
+    pixelData[rowIndex][colIndex] = ColorCanva;
   }
 }
 
@@ -164,4 +155,4 @@ function createPixel(rowIndex,colIndex,color){
     pixelSize
   );
 
-}
+  }
