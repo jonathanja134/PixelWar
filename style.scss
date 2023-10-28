@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+
+html {
+  background-color: #f3cfa7;
+}
+
+@media (max-width: 1600px) {
+    html{
+        width: fit-content;
+    }
+  }
+
+canvas{
+  display: flex;
+  margin: auto;
+  &:hover{
+    cursor: crosshair;
+  }
+}
+.title {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #fa952a;
+  margin-inline: auto;
+  font-size: 10em;
+  font-family: "Pixelify Sans", sans-serif;
+  margin-bottom: 0px;
+  margin-top: 20px;
+  text-shadow: 5px 4px 1px rgba(0, 0, 0, 0.6);
+  justify-content: center;
+}
+
+.title.underTitle {
+  font-size: 5em;
+  margin-bottom: 5px;
+}
+
+#colorChoice {
+  position: fixed;
+  right: 2vw;
+  top: 15vw;
+  background-color: #faf3e6;
+  width: 80px;
+  height: 670px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px -5px;
+}
+#colorChoice div {
+  height: 50px;
+  width: 50px;
+  margin-top: 10px;
+  margin-inline: auto;
+  border-radius: 25%;
+  opacity: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#colorChoice div:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+
+.Selector {
+  height: 50px;
+  width: 50px;
+  margin-top: 10px;
+  margin-inline: auto;
+  border-radius: 25%;
+  opacity: 100%;
+  display: flex;
+  border: none;
+  background-color: #151216;
+  overflow: none;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+footer .feedback {
+  background-color: #faf3e5;
+  border: none;
+  border-radius: 25px;
+  width: 100px;
+}
+
+.feedback-section {
+  display: inline-block;
+  margin-bottom: 20px;
+  margin: auto;
+}
+
+.feedback-section form textarea {
+  width: 40vw;
+  height: 100px;
+  margin-bottom: 10px;
+  padding: 5px;
+  box-shadow: 1px 1px 5px -3px;
+}
+
+button {
+  background-color: #faf3e6;
+  color: #151216;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  position: relative;
+  top: 5px;
+  box-shadow: 1px 1px 5px 0.25px;
+}
+button:active {
+  box-shadow: none;
+}
+
+#cursor {
+  position: absolute;
+  box-sizing: border-box;
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  border: 0.25px solid black;
+  box-sizing: border-box;
+}
+.img1{
+  display: flex;
+  width:100px;
+  margin:auto;
+}
