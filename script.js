@@ -190,7 +190,7 @@ function bullet(){
 shoot();
 
 window.addEventListener('resize', adjustDivSize);
-        window.addEventListener('load', adjustDivSize);
+window.addEventListener('load', adjustDivSize);
 
         function adjustDivSize() {
             const resizeTool = document.getElementsByClassName('resizeTool');
@@ -200,4 +200,8 @@ window.addEventListener('resize', adjustDivSize);
               resizeTool[i].style.height = newHeight + 'px';
               resizeTool[i].style.width = newHeight + 'px';
           }
+
+          const colorChoice = document.getElementById('colorChoice');
+          const newRadius = (windowHeight *0.035 ); // Ajustez selon vos besoins
+          colorChoice.style.borderRadius = newRadius + 'px';
         }
