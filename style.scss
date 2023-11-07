@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
 
-html {
-  background-color: #f3cfa7;
+.html {
+background: rgb(4,46,96);
+background: linear-gradient(0deg, rgba(4,46,96,1) 0%, #004ac3 62%, #152f4e 100%);
 }
-
 @media (max-width: 1600px) {
     html{
         width: fit-content;
@@ -13,6 +13,7 @@ html {
 canvas{
   display: flex;
   margin: auto;
+  margin-bottom: 11vh;
   &:hover{
     cursor: crosshair;
   }
@@ -29,51 +30,80 @@ canvas{
   margin-top: 20px;
   text-shadow: 5px 4px 1px rgba(0, 0, 0, 0.6);
   justify-content: center;
+  animation: animate 3s linear infinite;
+  z-index: 0;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 80%;
+    background: linear-gradient(90deg, #ffffff, #fff, #ffffff);
+    background-repeat: no-repeat;
+    background-clip: text;
+    z-index: -1; /* Place l'effet en arrière-plan du texte */
+  }
 }
-
+@keyframes animate {
+  0% {
+    background-position: -100%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
 .title.underTitle {
   font-size: 5em;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 #colorChoice {
-  position: fixed;
-  right: 2vw;
-  top: 15vw;
+  display: flex;
+  flex-wrap: wrap;
+  position: sticky;
+  right: auto;
+  bottom: 5vh;
+  margin: auto;
   background-color: #faf3e6;
-  width: 80px;
-  height: 670px;
+  width: fit-content;
+  height: max-content;
+  padding: 2vh;
   border-radius: 20px;
   box-shadow: 2px 2px 10px -5px;
+  justify-content: center;
+  @media(max-width:1300px){
+    width: 1300px;
+  }
 }
-#colorChoice div {
-  height: 50px;
-  width: 50px;
-  margin-top: 10px;
-  margin-inline: auto;
-  border-radius: 25%;
-  opacity: 100%;
+
+.resizeTool {
   display: flex;
+  height: 9vh;
+  width: 9vh;
+  margin: 2vh;
+  border-radius: 25%;
   justify-content: center;
   align-items: center;
+ 
 }
 #colorChoice div:hover {
   cursor: pointer;
   opacity: 70%;
 }
 
-.Selector {
-  height: 50px;
-  width: 50px;
-  margin-top: 10px;
+/*.Selector {
+  display: flex;
+  height: 9vh;
+  width: 9vh;
+  margin-block: auto;
   margin-inline: auto;
   border-radius: 25%;
-  opacity: 100%;
-  display: flex;
   border: none;
   background-color: #151216;
   overflow: none;
-}
+}*/
 
 footer {
   display: flex;
@@ -124,9 +154,4 @@ button:active {
   background-color: transparent;
   border: 0.25px solid black;
   box-sizing: border-box;
-}
-.img1{
-  display: flex;
-  width:100px;
-  margin:auto;
 }
