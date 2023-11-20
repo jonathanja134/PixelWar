@@ -1,0 +1,44 @@
+1. préparer et tester son smart contract sur le site remix.ethereum.org (voir fichier wallet.sol)
+
+2. configurer son environnement de dev/travail local :
+- créer un dossier dans lequel vous réunirai tout vos différents fichiers
+- dans ce dossier créer un fichier .sol comme wallet.sol et y copier coller votre code fait précédemment sur remix
+- dans vscode télécharger l'extension "NomicFoundation.hardhat-solidity"
+- ouvrir un nouveau terminal, ce placer dans le repertoir actuel cd .../nom de votre dossier
+- télécharger node.js https://nodejs.org/en si téléchargement réussi verifier avec la commande node --version cela doit afficher des nombres
+- verifier l'installation automatique avec nodejs de npm avec npm --version idem pour corepack avec corepack --version 
+- puis activer corepack avec la commande corepack enable si corepack erreur utiliser la commande npm i -g corepack
+- verifier l'installation automatique de yarn avec yarn --version
+- puis télécharger le compilateur solidity avec yarn add solc@0.8.7-fixed
+- un dossier node_module, un fichier package.json et yarn.lock devraient apparaître
+- compiler le smart contract avec la commande yarn solcjs --bin --abi --include-path node_modules/ --base-path . -o . wallet.sol
+- deux fichiers devraient apparaître walle_sol_wallet.bin et idem.abi
+- installer le logiciel ganache https://trufflesuite.com/ganache/ pour avoir une blockchain ethereum fictive sur notre pc 
+- dans ganache cliquer sur quickstart et laisser le logiciel tourner en fond 
+- ouvrir votre navigateur est intsaller l'extension metamask
+- tjrs dans metamask cliquer sur ethereum mainet puis show test network et enfin add network
+- en bas de la page cliquer sur add network manually
+- network name mettre ganache, new rpc url HTTP://127.0.0.1:7545 (visible sur ganache ), network id 1337 ,currency symbole ETH
+- valider puis cliquer sur switch on ganache
+- aller sur ganache cliquer sur la clé de la première address pour afficher sa clé privé puis la copier
+- aller sur metamask cliquer sur account puis add account puis import account et coller la clé privée
+- revenir à notre terminal et installer etherjs yarn add ethers et fs-extra yarn add fs-extra
+- 100 ETH fictif doivent apparaître sur votre nouveau compte metamask
+
+2. deployer notre smart contract
+- créer un fichier deploy.js qui va nous permettre de deployer notre smart contract
+(suite voir commentaire dans deploy.js)
+- une fois le fichier deploy.js terminer deployer notre smart contract dans notre blockchain en executant notre fichier avec la commande node deploy.js une suite hexadecimal devrait s'afficher c'est l'address du contract
+
+
+
+3. creer une interface graphique web pour intéragir avec notre smart contract
+- créer un fichier constant.js contenant l'addresse du smart contract et le contenu du fichier .abi (voir fichier constant.js)
+- créer un fichier ethers-5.1.esm.min.js et copier coller dedans le code de https://cdn.ethers.io/lib/ethers-5.1.esm.min.js 
+- créer un fichier index.html et index.js
+(voir commentaire index.html)
+(voir commentaire index.html)
+- télécharger l'extension vs code ritwickdey.LiveServer
+- activer le bouton go live en bas de votre page vscode
+- notre page web s'ouvre puis ouvrir la console js en faisant clique droit inspect
+-intéragir avec le smart contract et regardant la console js et les bloc qui se créent dans ganache dans l'onglet bloc de ganache

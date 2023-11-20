@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
+.html {
+  background: rgb(4, 46, 96);
+  background: linear-gradient(0deg, rgb(4, 46, 96) 0%, #004ac3 62%, #152f4e 100%);
+}
+
+@media (max-width: 1600px) {
+  html {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+body {
+  width: 100%;
+}
+
+canvas {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+canvas:hover {
+  cursor: crosshair;
+}
+
+.title {
+  display: flex;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #fa952a;
+  margin-inline: auto;
+  font-size: 5em;
+  font-family: "Pixelify Sans", sans-serif;
+  margin-bottom: 0px;
+  margin-top: 20px;
+  text-shadow: 5px 4px 1px rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  animation: animate 3s linear infinite;
+  z-index: 1;
+}
+
+@keyframes animate {
+  0% {
+    background-position: -100%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+.title.underTitle {
+  font-size: 2em;
+  margin-bottom: 50px;
+}
+
+#colorChoice {
+  display: flex;
+  flex-wrap: wrap;
+  position: sticky;
+  right: auto;
+  margin: auto;
+  background-color: #faf3e6;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 80%;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 2vh;
+  border-radius: 20%;
+  box-shadow: 2px 2px 10px -5px;
+  justify-content: center;
+  margin-top: 2vh;
+  margin-bottom: 5vh;
+}
+
+.resizeToolBlock {
+  display: flex;
+  margin: 2vh;
+  border-radius: 25%;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.1s ease-in-out;
+}
+
+#colorChoice div:hover {
+  cursor: pointer;
+  opacity: 70%;
+  animation: rotating 2s linear infinite;
+  animation: transition 2s linear infinite;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes transition {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+div::after {
+  opacity: 0%;
+}
+
+.whitePen {
+  color: #fff;
+}
+
+button {
+  background-color: #faf3e6;
+  color: #151216;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  position: relative;
+  top: 5px;
+  box-shadow: 1px 1px 5px 0.25px;
+}
+
+button:active {
+  box-shadow: none;
+}
+
+#cursor {
+  position: absolute;
+  box-sizing: border-box;
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  border: 0.25px solid black;
+  box-sizing: border-box;
+}
+
+.block {
+  margin: 10px;
+}
+
+#output {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  background-color: rgb(230, 209, 168);
+  color: #000000;
+}
+
+#Container {
+  display: flex;
+  width: 80%;
+  height: 60vh;
+  overflow: hidden;
+  transform-origin: 0px 0px;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.0196078431);
+  margin-left: 10%;
+  margin-right: 10%; /* Use margin-top instead of top */
+}
+
+#canvaBox {
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+  z-index: 1;
+}
+
+#Popup-Overlay {
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5450980392);
+  z-index: 100;
+  display: flex;
+}
+
+#Popup-Overlay.close {
+  display: none !important;
+}
+
+.Popup-Content {
+  max-width: 600px;
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+  background: #faf3e6;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}/*# sourceMappingURL=style.css.map */
