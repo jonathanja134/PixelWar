@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+
+:root {
+  //variable bleu en backgroud
+  --blueBACK: #668bcb;
+}
+
+//3f63c5
+html {
+width: 100%;
+background: rgb(4,46,96);
+background: linear-gradient(0deg, rgba(4,46,96,1) 0%, #004ac3 62%, #152f4e 100%);
+}
+.fullSize{
+  background: white;
+  width:auto;
+}
+
+body{
+  width: 100%;
+}
+
+
+.title {
+  display: flex;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #fa952a;
+  margin-inline: auto;
+  font-size: 5em;
+  font-family: "Pixelify Sans", sans-serif;
+  margin-bottom: 0px;
+  margin-top: 20px;
+  text-shadow: 5px 4px 1px rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  animation: animate 3s linear infinite;
+  z-index: 1;
+}
+
+  
+
+@keyframes animate {
+  0% {
+    background-position: -100%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+.title.underTitle {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+//-----------------Color-tool-block------------------//
+
+#colorChoice {
+  display: flex;
+  flex-flow:wrap;
+  position: sticky;
+  right: auto;
+  margin: auto;
+  background: var(--blueBACK);
+  width: fit-content;
+  max-width: 80%;
+  height: max-content;
+  padding: 2vh;
+  border-radius: 20%;
+  box-shadow: 2px 2px 10px -5px;
+  justify-content: center;
+  margin-top: 2vh;
+  margin-bottom: 5vh;
+  z-index: 99;
+ 
+}
+.FullPageColorChoice{
+  margin-top: 11vw !important;
+}
+
+.resizeToolBlock {
+  display: flex;
+  // width and height set in the script.js
+  margin: 2vh;
+  border-radius: 25%;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease-in-out;
+}
+#colorChoice div:hover {
+  cursor: pointer;
+  opacity: 70%;
+  transform: rotate(45deg) scale(1.3, 1.3);
+}
+@keyframes rotate{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+@keyframes translates {
+  0%,100%,
+  0% {
+    transform: translateY(0px); 
+  }
+  100% {
+    transform: translateY(-20px); 
+  }
+
+}
+
+.color-Selected {
+  transform: scale(1.3, 1.3);
+}
+
+.whitePen{color: #fff;}
+
+button {
+  background-color: #faf3e6;
+  color: #151216;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  position: relative;
+  top: 5px;
+  box-shadow: 1px 1px 5px 0.25px;
+}
+button:active {
+  box-shadow: none;
+}
+
+#cursor {
+  position: absolute;
+  box-sizing: border-box;
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  border: 0.25px solid black;
+  box-sizing: border-box;
+}
+
+.block{
+  margin:10px;
+}
+#output{
+  max-width: fit-content;
+  max-height: fit-content;
+  background-color: rgb(230, 209, 168);
+  color: #000000;
+}
+//-----------------tools------------------//
+
+.Tools{
+  display: flex;
+  position: absolute;
+  right: 2%;
+  top: 25%;
+  width: fit-content;
+  height: fit-content;
+  background:  var(--blueBACK);
+  border-radius: 20px;
+  flex-direction: column;
+}
+.Tools.contract{
+  position: relative;
+  margin-inline: auto;
+}
+.bis{
+  right: none;
+  left: 2%;
+}
+.toolBlock{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5vw;
+  height: 5vw;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.216);
+  cursor: grab;
+  &:hover{transform: scale(1.1);
+          transition: transform 0.2s ease;
+        }
+  &:active{transform: scale(1);
+           transition: transform 0.2s ease;
+           cursor: grabbing;
+        }
+}
+
+.toolBlock .fa-solid {
+  font-size: 2vw;
+}
+@media (max-width:800px) {
+  .Tools{display:none;
+  color: #004ac3;}
+  .title{
+    font-size: 3em;
+  }
+  .undertitle{
+    font-size: 1.5em;
+  }
+}
+//-----------------Canva------------------//
+
+canvas{
+  display:flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+  scale: 0.375;
+  margin-top: -500px;
+  &:hover{
+    cursor: crosshair;
+  }
+}
+#Container {
+  display: flex;
+  width: 80%;
+  height: 60vh;
+  transform-origin: 0px 0px;
+  z-index: 0;
+  background: var(--blueBACK);
+  margin-left: 10%;
+  margin-right:10%; /* Use margin-top instead of top */
+  border-radius: 3vh;
+}
+#Container.FullPageContainer{
+  background: none !important;
+  transform:scale(2.4,2.4);
+  width:33.33vw !important;
+  width: inherit;
+}
+.indexPageContainer{
+  background-color: none;
+  overflow: auto;
+}
+#canvaBox{
+  height:fit-content;
+  width: fit-content;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline:auto;
+  //overflow: hidden;
+  z-index: 1;
+
+}
+
+//-----------------Pop-Up------------------//
+
+#Popup-Overlay{
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top:0;
+  right: 0;
+  left:0;
+  bottom:0;
+  background: #00000023;
+  z-index: 100;
+  backdrop-filter: blur(5px);
+  display: none;
+}
+#Popup-Overlay.open{
+  display: flex;}
+#Popup-Overlay.close{
+  display: none;}
+
+.Popup-Content{
+  max-width: 600px;
+  font-family:Arial, Helvetica, sans-serif;
+  text-align: center;
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+  background:#faf3e64b;
+  border-radius: 20px;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  opacity: 70%;
+}
+#Popup-Okay{
+  color: #ffffff;
+  background-color:rgb(0, 0, 0);
+  box-shadow: none;
+  cursor:pointer;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 1em;
+  padding: 1.2em;
+
+  :active{
+    background-color: #fff;
+  }
+}
+#scroll-advice{ cursor: row-resize;}   
+#rightClick-advice{ cursor: all-scroll;} 
+#leftClick-advice{ cursor:crosshair;} 
+#Popup-button{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1em;
+}
+
+//------------------------------maps-------------//
+@media (min-width:300px) {
+#map-overlay{
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  right:2vw;
+  top:2vw;
+  width:320px;
+  height:320px;
+  border-radius: 1vw;
+  background-color:#fff ;
+  
+}
+#map{
+  z-index: 1;
+  position: relative;
+  width:300px;
+  height:300px;
+  border-radius: 1vw;
+  background-color:#fff;
+}
+#maps-open{
+  z-index: 2;
+  position: absolute;
+  right:1vw;
+  top:1vw;
+  background-color:#fff;
+  border-radius: 50%;
+  padding: 10px;
+}
+}
+
+//------------------------------maps-------------//
