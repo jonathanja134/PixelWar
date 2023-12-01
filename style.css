@@ -65,6 +65,7 @@ canvas:hover {
 
 #colorChoice {
   display: flex;
+  position:sticky;
   flex-wrap: wrap;
   position: sticky;
   right: auto;
@@ -99,45 +100,6 @@ canvas:hover {
 #colorChoice div:hover {
   cursor: pointer;
   opacity: 70%;
-}
-
-/*.Selector {
-  display: flex;
-  height: 9vh;
-  width: 9vh;
-  margin-block: auto;
-  margin-inline: auto;
-  border-radius: 25%;
-  border: none;
-  background-color: #151216;
-  overflow: none;
-}*/
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-footer .feedback {
-  background-color: #faf3e5;
-  border: none;
-  border-radius: 25px;
-  width: 100px;
-}
-
-.feedback-section {
-  display: inline-block;
-  margin-bottom: 20px;
-  margin: auto;
-}
-
-.feedback-section form textarea {
-  width: 40vw;
-  height: 100px;
-  margin-bottom: 10px;
-  padding: 5px;
-  box-shadow: 1px 1px 5px -3px;
 }
 
 button {
