@@ -65,7 +65,7 @@ canvas:hover {
 
 #colorChoice {
   display: flex;
-  position:sticky;
+  position:fixed;
   flex-wrap: wrap;
   position: sticky;
   right: auto;
