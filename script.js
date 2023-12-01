@@ -202,6 +202,6 @@ window.addEventListener('load', adjustDivSize);
           }
 
           const colorChoice = document.getElementById('colorChoice');
-          const newRadius = (windowHeight *0.035 ); // Ajustez selon vos besoins
+          const newRadius = (windowHeight *0.045 ); // Ajustez selon vos besoins
           colorChoice.style.borderRadius = newRadius + 'px';
         }
