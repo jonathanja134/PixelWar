@@ -195,7 +195,7 @@ window.addEventListener('load', adjustDivSize);
         function adjustDivSize() {
             const resizeTool = document.getElementsByClassName('resizeTool');
             const windowHeight = window.innerHeight;
-            const newHeight = windowHeight * 0.045; // Ajustez selon vos besoins
+            const newHeight = windowHeight * 0.055; // Ajustez selon vos besoins
             for (let i = 0; i < resizeTool.length; i++) {
               resizeTool[i].style.height = newHeight + 'px';
               resizeTool[i].style.width = newHeight + 'px';
