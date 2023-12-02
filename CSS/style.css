@@ -200,7 +200,7 @@ button:active {
   font-size: 2vw;
 }
 
-@media (max-width: 850px) {
+@media small {
   .Container {
     overflow: visible;
   }
