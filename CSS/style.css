@@ -214,9 +214,6 @@ button:active {
   .underTitle {
     font-size: 1.5em;
   }
-  #Container {
-    border-radius: 0;
-  }
 }
 canvas {
   display: flex;
@@ -245,7 +242,11 @@ canvas:hover {
   background: var(--blueBACK);
   margin-left: 10%;
   margin-right: 10%; /* Use margin-top instead of top */
-  border-radius: 3vh;
+}
+@media (min-width: 850px) {
+  #Container {
+    border-radius: 3vh;
+  }
 }
 
 #Container.FullPageContainer {

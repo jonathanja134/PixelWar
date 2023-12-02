@@ -205,9 +205,6 @@ button:active {
   .underTitle{
     font-size: 1.5em;
   }
-  #Container{
-    border-radius: 0;
-  }
 }
 //-----------------Canva------------------//
 
@@ -238,7 +235,9 @@ canvas{
   background: var(--blueBACK);
   margin-left: 10%;
   margin-right:10%; /* Use margin-top instead of top */
+  @media (min-width: 850px){
   border-radius: 3vh;
+  }
 }
 #Container.FullPageContainer{
   background: none !important;
