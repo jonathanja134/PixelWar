@@ -219,6 +219,12 @@ canvas{
     cursor: crosshair;
   }
 }
+
+#canvasMobile{
+  scale:0.9;
+  margin-top: auto;
+}
+
 #Container {
   display: flex;
   width: 80%;
