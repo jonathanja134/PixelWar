@@ -16,6 +16,7 @@ html {
 
 body {
   width: 100%;
+  margin: 0;
 }
 
 .title {
@@ -43,7 +44,7 @@ body {
     background-position: 100%;
   }
 }
-.title.underTitle {
+.underTitle {
   font-size: 2em;
   margin-bottom: 20px;
 }
@@ -199,7 +200,7 @@ button:active {
   font-size: 2vw;
 }
 
-@media small {
+@media (max-width: 850px) {
   .Container {
     overflow: visible;
   }
@@ -208,9 +209,9 @@ button:active {
     color: #004ac3;
   }
   .title {
-    font-size: 3em;
+    font-size: 2em;
   }
-  .undertitle {
+  .underTitle {
     font-size: 1.5em;
   }
 }
