@@ -192,7 +192,10 @@ button:active {
 .toolBlock .fa-solid {
   font-size: 2vw;
 }
-@media (max-width:800px) {
+@media small {
+  .Container{
+    overflow: visible;
+  }
   .Tools{display:none;
   color: #004ac3;}
   .title{

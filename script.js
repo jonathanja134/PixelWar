@@ -191,7 +191,7 @@ window.addEventListener('load', adjustDivSize);
     // Coordonnées de la souris par rapport au coin supérieur gauche du canvas
     var mouseX = e.clientX - canvasEl.getBoundingClientRect().right;
     console.log(mouseX)
-    var mouseY = e.clientY - canvasEl.getBoundingClientRect().top - 510 ;
+    var mouseY = e.clientY - canvasEl.getBoundingClientRect().top;
     console.log(mouseY)
     var xs = (mouseX - pointX) / scale;
     var ys = (mouseY - pointY) / scale;
@@ -248,7 +248,6 @@ for (var i = 0; i < resizeToolBlock.length; i++) {
     return function (e) {
       // Change the class for the clicked element
       resizeToolBlock[index].classList.add("color-Selected");
-    
        for (var j = 0; j < resizeToolBlock.length; j++) {
          if (j !== index) {
            resizeToolBlock[j].classList.remove("color-Selected");
@@ -257,60 +256,8 @@ for (var i = 0; i < resizeToolBlock.length; i++) {
     };
   })(i));
 }
-//--------------------------------Open dev function-------------------------------//
+//--------------------------------Open page function-------------------------------//
 
 function allerAPage(nouvellePage) {
   window.location.href = nouvellePage + '.html';
 }
-
-//-------fullSize settings
-
-
-/*
-//------------------------------Mini maps TRY-----------------------------//
-
-var map = L.map('map', {
-  crs: L.CRS.Simple
-});
-var bounds = [[0,0], [300,300]];
-var canvasOverlay = L.imageOverlay(canvasEl.toDataURL(), bounds).addTo(map);
-map.fitBounds(bounds);
-
-var map = L.map('map', {
-  crs: L.CRS.Simple,
-  minZoom: -10
-});
-
-var sol = L.latLng([ 145, 175.2 ]);
-L.marker(sol).addTo(map);
-map.setView([canvasEl.height / 2, canvasEl.width / 2], 1);
-var yx = L.latLng;
-
-var xy = function(x, y) {
-    if (Array.isArray(x)) {    // When doing xy([x, y]);
-        return yx(x[1], x[0]);
-    }
-    return yx(y, x);  // When doing xy(x, y);
-};
-
-//mini maps toogle
-
-mapsOpen = document.getElementById("maps-open");
-mapOverlay = document.getElementById("maps-overlay");
-map = document.getElementById("map");
-
-mapsOpen.addEventListener("click", function () {
-  // Toggle the visibility of the map and overlay
-  if (map.style.display === 'none' || map.style.display === '') {
-    map.style.display = 'block';
-    mapOverlay.style.display = 'block';
-    alert("open");
-  } else {
-    map.style.display = 'none';
-    mapOverlay.style.display = 'none';
-    alert("close");
-  }
-});
-
-//------------------------------Mini maps TRY-----------------------------//
-*/
