@@ -193,7 +193,7 @@ button:active {
 .toolBlock .fa-solid {
   font-size: 2vw;
 }
-@media small {
+@media (max-width:850px) {
   .Container{
     overflow: visible;
   }
