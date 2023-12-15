@@ -11,7 +11,7 @@ const colMax = canvasWidth / pixelSize;
 const rowMax = canvasHeight / pixelSize;
 //Creation of the list that will be use to generate the color choice section
 const colorList = [
-  'red', 'orange', 'yellow', '#cb6e00', '#0cd78d', 'cyan', '#052be6', '#690be4', '#ce0ee0', '#c75884'];
+  'black','white','red', 'orange', 'yellow', '#cb6e00', '#0cd78d','lightgreen', 'cyan', '#052be6', '#690be4', '#ce0ee0', '#c75884'];
 let currentColorChoice = 0;
 
 //---- 2/ Firebase configuration (to control the dataBase of pixel) ----//
@@ -49,20 +49,6 @@ colorList.forEach(color => {
   });
 });
 
-// Create the ColorSelector for the Toolbar
-/*
-colorSelector.addEventListener('input', () => { // Use 'input' event for color inputs
-    currentColorChoice = colorSelector.value;
-    ctx.fillStyle = currentColorChoice;
-
-    colorSelector.style.backgroundColor = currentColorChoice;
-
-    colorChoice.querySelectorAll('div').forEach(item => {
-        item.innerHTML = ''; // Clear the innerHTML of each color item
-        });
-        colorSelector.innerHTML = '<i class="fa-solid fa-pen"></i>'
-    });
-*/
 //---- 4/ creation of the Canva Support ----//
 
 const firstDrawCanva = () => {
@@ -157,37 +143,8 @@ db.collection('pixel').onSnapshot(function(querySnapshot){
     createPixel(rowIndex,colIndex,color)
   })
 })
-//---- Pulp fiction ----//
 
-function shoot() {
-	setTimeout(function(){ 
-		$('.vincent').addClass( "pf-vincent-gun");
-		$('.jules').addClass( "pf-jules-gun");
-    
-    // You ever read the Bible?
-		setTimeout(bullet, 500);
-		setTimeout(bullet, 1500);
-
-		setTimeout(function(){ 
-			$('.vincent').removeClass( "pf-vincent-gun");
-			$('.jules').removeClass( "pf-jules-gun");
-
-			shoot();
-
-		}, 3000);
-	}, 1000);
- }
-
-function bullet(){
-	$('.vincent').addClass( "pf-vincent-fire");
-	$('.jules').addClass( "pf-jules-fire");
-
-	setTimeout(function(){ 
-		$('.vincent').removeClass( "pf-vincent-fire");
-		$('.jules').removeClass( "pf-jules-fire");
-	}, 500);
-}
-shoot();
+          //---- 10/ Resize color block  ----// 
 
 window.addEventListener('resize', adjustDivSize);
 window.addEventListener('load', adjustDivSize);
@@ -195,13 +152,13 @@ window.addEventListener('load', adjustDivSize);
         function adjustDivSize() {
             const resizeTool = document.getElementsByClassName('resizeTool');
             const windowHeight = window.innerHeight;
-            const newHeight = windowHeight * 0.055; // Ajustez selon vos besoins
+            const newHeight = windowHeight * 0.10; // Ajustez selon vos besoins
             for (let i = 0; i < resizeTool.length; i++) {
               resizeTool[i].style.height = newHeight + 'px';
               resizeTool[i].style.width = newHeight + 'px';
           }
 
           const colorChoice = document.getElementById('colorChoice');
-          const newRadius = (windowHeight *0.045 ); // Ajustez selon vos besoins
+          const newRadius = (windowHeight *0.035 ); // Ajustez selon vos besoins
           colorChoice.style.borderRadius = newRadius + 'px';
         }
