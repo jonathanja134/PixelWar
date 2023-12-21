@@ -1,36 +1,61 @@
 <!doctype html>
-<html lang="fr">
+<meta charset="utf-8">
+<html class="html" lang="fr">
   <head>
-    <meta charset="utf-8">
-      <title>PixIcam.com</title>
+    <meta http-equiv="Permissions-Policy" content="directives">
+    <meta name="view-transition" content="same-origin"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=14,user-scalable=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/Front-end/CSS/style.css">
+    </script>
+    <title>PixIcam.com</title>
   </head>
   <header>
     <h1 class="title">- PixIcam Wars -</h1>
     <h1 class="title underTitle">Place your Pixel</h1>
   </header>
   <body>
-    <div id="cursor"></div>
-    <canvas id="game"></canvas>
-    <div id="colorChoice">
-      <input type="color" id="colorSelector" class="Selector">
+    <div id="Container" class="indexPageContainer">
+      <div id="canvaBox">
+        <canvas id="canvas"></canvas>
+      </div>
     </div>
+    <div id="colorChoice" class="indexPage">
+        <section class="toolBlock resizeToolBlock" onclick="allerAPage('FullSizePage')"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></section>
+        <section class="toolBlock resizeToolBlock fullSize" onclick="OpenPopUp()" ><i class="fa-solid fa-question"></i></section>
+    </div>
+    <!-- POP-UP-->
+    <div id="Popup-Overlay">
+        <div class="Popup-Content">
+          <h1>Control </h1>
+          <div class="icon-line">
+          <img class="icon-advice " src="/Front-end/image/Wheel click.png">
+          <h4 id="scroll-advice">: Zoom on the board</h4>
+          </div>
+          <div class="icon-line">
+          <img class="icon-advice " src="/Front-end/image/Left click.png">
+          <h4 id="rightClick-advice">: Drag or move on the board</h4>
+          </div>
+          <div class="icon-line">
+          <img class="icon-advice " src="/Front-end/image/Right click.png">
+          <h4 id="leftClick-advice">: Place your Pixel</h4>
+          </div>
+          <div id="Popup-button">
+          <button id="Popup-Okay">Retour</button>
+        </div>
+      </div>
+    </div>
+    <!-- POP-UP-->
     
   </body>
   <footer>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-     <script src="script.js"></script>
-     
-     <div class="feedback-section">
-      <h3 class="title underTitle">Feedback</h3>
-      <form>
-        <textarea class="feedback"placeholder="  Enter your feedback"></textarea>
-        
-      </form>
-      <button type="submit">Submit</button>
+    <script src="/Front-end/JS/script.js"></script>
+    <script src="/Front-end/JS/Anim.js"></script>
+      <!-- lier notre index.js à notre html -->
+     <script src="/Front-end/JS/index.js" type="module"></script>
+     <a href="https://www.flaticon.com/free-icons/right-click" title="right click icons"></a>
     </div>
-   
   </footer>
 </html>
