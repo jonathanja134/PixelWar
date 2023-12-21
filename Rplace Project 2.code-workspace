@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../.bitnami/stackman/machines/xampp/volumes/root/php"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Rplace Project 2"
+	}
+}
